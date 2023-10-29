@@ -1,11 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    'mongodb+srv://alex:qwe@cluster0-l4izx.gcp.mongodb.net/test?retryWrites=true'
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('connexion ok !');
+    console.log("connexion ok !");
   })
   .catch((err) => {
     console.log(err);
